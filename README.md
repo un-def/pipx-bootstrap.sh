@@ -25,19 +25,31 @@ It seems like the ‘chicken and egg’ problem, doesn't it?
 Download `pipx-bootstrap.sh` and run it:
 
 ```shell
-$ sh pipx-bootstrap.sh
+sh pipx-bootstrap.sh
 ```
 
 or use ‘curl pipe shell’ technique:
 
 ```shell
-$ curl https://raw.githubusercontent.com/un-def/pipx-bootstrap.sh/master/pipx-bootstrap.sh | sh
+curl https://raw.githubusercontent.com/un-def/pipx-bootstrap.sh/master/pipx-bootstrap.sh | sh
+```
+
+Script arguments are passed to `pipx install pipx` command, e.g.,
+
+```shell
+sh pipx-bootstrap.sh --verbose --force
+```
+
+is equivalent to
+
+```
+pipx install pipx --verbose --force
 ```
 
 The script uses `python3` binary by default. It can be overriden with the environment variable `PYTHON_BIN`:
 
 ```shell
-$ PYTHON_BIN=/path/to/python sh pipx-bootstrap.sh
+PYTHON_BIN=/path/to/python sh pipx-bootstrap.sh
 ```
 
 ## Alternatives

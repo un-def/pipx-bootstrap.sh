@@ -21,4 +21,4 @@ test -n "${pipx}" || die 'pipx wheel not found'
 
 PYTHONPATH=$(find "${tmp}" -type f -printf :%p | cut -c 2-)
 export PYTHONPATH
-"${python}" "${tmp}/${pipx}/pipx" install pipx
+"${python}" "${tmp}/${pipx}/pipx" install pipx "${@}"
