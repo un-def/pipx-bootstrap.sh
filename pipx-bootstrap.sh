@@ -2,8 +2,9 @@
 tmp=$(mktemp -d)
 cleanup() {
   rm -r "${tmp}"
+  trap - EXIT
 }
-trap cleanup EXIT INT QUIT
+trap cleanup EXIT INT QUIT TERM HUP
 
 die() {
   test "${#}" -ne 0 && echo "${@}"
