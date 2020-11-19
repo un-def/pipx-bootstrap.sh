@@ -13,8 +13,8 @@ die() {
 
 python=${PYTHON_BIN:-python3}
 
-python_major_version=$("${python}" -c 'import sys; print(sys.version_info.major)') || die
-test "${python_major_version}" -ge 3 || die 'python 2 is not supported'
+python_version_ok=$("${python}" -c 'import sys; print(sys.version_info >= (3, 6))') || die
+test "${python_version_ok}" = 'True' || die 'python 3.6+ is required'
 
 "${python}" -m pip download --only-binary :all: --dest "${tmp}" pipx || die
 pipx=$(find "${tmp}" -name 'pipx-*' -printf %f)
