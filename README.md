@@ -2,6 +2,10 @@
 
 A POSIX Shell script for installing pipx with pipx
 
+## Other Versions
+
+  * [PowerShell](https://github.com/un-def/pipx-bootstrap.ps1)
+
 ## Motivation
 
 [pipx][pipx-homepage] is an excellent tool for managing end-user applications written in Python. It installs each application (an *application* is, in fact, a regular Python package with some sort of binary, e.g., a console script) in isolated [virtual environment][venv-docs], thus avoiding pollution of system/user site directories. However, you still need to install `pipx` in a system or user site.
